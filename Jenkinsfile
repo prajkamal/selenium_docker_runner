@@ -3,7 +3,12 @@ pipeline{
 	stages{
 		stage("Turn on Grid"){
 			steps{
-				bat "docker-compose up"
+				bat "docker-compose up -d hub chrome firefox"
+			}
+		}
+		stage("Execute Tests"){
+			steps{
+				bat "docker-compose up searchPageTestNG"
 			}
 		}
 		stage("Bring grid down"){
