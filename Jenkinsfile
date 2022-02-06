@@ -8,7 +8,7 @@ pipeline{
 		}
 		stage("Execute Tests"){
 			steps{
-				bat "docker-compose up searchPageTestNG"
+				bat "docker-compose up selenium-tests"
 			}
 		}
 		stage("Bring grid down"){
